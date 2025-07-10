@@ -1,0 +1,16 @@
+3 bước này để migarate DB
+tạo 1 schema trên mysql tên trong .env giống local là được. rồi chạy 3 lệnh dưới
+-------------------------------------------------------------------------------------------
+yarn
+npx knex migrate:up
+yarn start
+
+install docker unbuntu: https://www.simplilearn.com/tutorials/docker-tutorial/how-to-install-docker-on-ubuntu
+docker mysql : https://dev.to/yongchanghe/want-to-install-mysql-database-and-finalize-your-data-using-docker-on-your-aws-ec2-3lc6?fbclid=IwAR1j5u7vIBNXFi__gjgxqZ0uEIr8pewWFbXEM1x1aRCl171xBP2DTlsegd8
+install node v18.7 ubuntu: https://computingforgeeks.com/how-to-install-latest-nodejs-on-ubuntu-debian-linux/
+
+npm install -g pm2
+pm2 start filechay --name namePM2
+pm2 status
+pm2 startup
+pm2 save
