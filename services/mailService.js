@@ -74,7 +74,7 @@ const sendEmail = async ({
     const submitted_at = dayjs().format("YYYY-MM-DD HH:mm:ss");
     const updated_at = dayjs().format("YYYY-MM-DD HH:mm:ss");
 
-    await db('crawl_data.cv_submissions').insert({
+    await db('railway.cv_submissions').insert({
       id,
       applicant_id,
       company_id,
@@ -98,7 +98,7 @@ const sendEmail = async ({
 
 const getAllCVsByApplicantID = async (applicant_id) => {
   try {
-    const cvs = await db('crawl_data.cv_submissions')
+    const cvs = await db('railway.cv_submissions')
       .where({ applicant_id })
       .orderBy('submitted_at', 'desc');
     return cvs;
@@ -110,7 +110,7 @@ const getAllCVsByApplicantID = async (applicant_id) => {
 
 const getAllCVsByCompanyID = async (company_id) => {
   try {
-    const cvs = await db('crawl_data.cv_submissions')
+    const cvs = await db('railway.cv_submissions')
       .where({ company_id })
       .orderBy('submitted_at', 'desc');
     return cvs;
@@ -122,7 +122,7 @@ const getAllCVsByCompanyID = async (company_id) => {
 
 const getAllCVsByCompanyName = async (company_name) => {
   try {
-    const cvs = await db('crawl_data.cv_submissions')
+    const cvs = await db('railway.cv_submissions')
       .where({ company_name })
       .orderBy('submitted_at', 'desc');
     return cvs;
@@ -134,7 +134,7 @@ const getAllCVsByCompanyName = async (company_name) => {
 
 const updateCVStatus = async (id, status) => {
   try {
-    const affectedRows = await db('crawl_data.cv_submissions')
+    const affectedRows = await db('railway.cv_submissions')
       .where({ id })
       .update({
         status,

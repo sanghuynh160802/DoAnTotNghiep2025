@@ -625,7 +625,7 @@ const updateCVStatus = async (req, res) => {
 };  
 
 const saveEmployerMessage = async (submissionId, message) => {
-  return await db("crawl_data.cv_submissions")
+  return await db("railway.cv_submissions")
     .where({ id: submissionId })
     .update({ employer_message: message });
 };

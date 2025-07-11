@@ -76,10 +76,10 @@ db.raw('SELECT 1')
     console.log('✅ Database connection successful!');
     
     // Fetch and print first 5 rows
-    return db('crawl_data.job_data').select('*').limit(5);
+    return db('railway.job_data').select('*').limit(5);
   })
   .then((rows) => {
-    console.log('🔍 First 5 rows from crawl_data.job_data:', rows);
+    console.log('🔍 First 5 rows from railway.job_data:', rows);
   })
   .catch((err) => {
     console.error('❌ Database query failed:', err);
